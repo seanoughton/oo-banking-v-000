@@ -10,8 +10,9 @@ class Transfer
   end
 
   def valid?()
+    #a bank account has a valid()? method
     @sender.valid?()
-    @reciever.valid?()
+    @receiver.bank_accountvalid?()
   end
 
 
