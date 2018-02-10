@@ -33,7 +33,7 @@ class Transfer
   def reverse_transfer()
     if @status = "complete"
       self.receiver.balance -= amount
-      self..senderbalance += amount
+      self.sender.balance += amount
     end
   end
 
