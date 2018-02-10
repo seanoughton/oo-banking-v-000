@@ -10,8 +10,8 @@ class Transfer
   end
 
   def valid?()
-    self.sender.valid?()
-    self.reciever.valid?()
+    @sender.valid?()
+    @reciever.valid?()
   end
 
 
