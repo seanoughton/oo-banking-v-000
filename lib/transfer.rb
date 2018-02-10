@@ -2,8 +2,6 @@ class Transfer
 
   attr_accessor :sender, :receiver, :amount, :status
 
-  @@all = []
-
   def initialize(sender,receiver,amount)
     @sender = sender
     @receiver = receiver
@@ -17,10 +15,11 @@ class Transfer
   end
 
   def execute_transaction()
-    self.sender.balance -= amount
-    self.receiver.balance += amount
-    @status = "complete"
-    @@all << self
+    if @status == "pending"
+      self.sender.balance -= amount
+      self.receiver.balance += amount
+      @status = "complete"
+    end
   end
 
 
